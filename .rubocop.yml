@@ -1,0 +1,66 @@
+Layout/EmptyComment:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Naming/UncommunicativeMethodParamName:
+  Exclude:
+    - test/test_helper.rb
+
+# BEGIN: AllCops
+AllCops:
+  Exclude:
+    - bin/*
+    - config/initializers/content_security_policy.rb
+    - config/spring.rb
+    - db/migrate/*
+    - db/schema.rb
+    - mod/**/*
+    - tmp/**/*
+    - vendor/**/*
+# END: AllCops
+
+Bundler/OrderedGems:
+  Exclude:
+    - Gemfile
+
+# BEGIN: Metrics/LineLength
+Metrics/LineLength:
+  Exclude:
+    - config/application.rb
+    - config/environments/development.rb
+    - config/environments/production.rb
+    - config/initializers/assets.rb
+    - config/initializers/backtrace_silencers.rb
+    - config/initializers/new_framework_defaults.rb
+    - config/initializers/session_store.rb
+    - config/initializers/wrap_parameters.rb
+    - config/environments/production.rb
+    - config/environments/test.rb
+    - config/puma.rb
+    - config/routes.rb
+    - db/seeds.rb
+    - Gemfile
+    - Rakefile
+    - test/integration/*
+    - test/test_helper.rb
+# END: Metrics/LineLength
+
+# BEGIN: Style/ClassAndModuleChildren
+Style/ClassAndModuleChildren:
+  Exclude:
+    - test/test_helper.rb
+# END: Style/ClassAndModuleChildren
+
+# BEGIN: Style/MixinUsage
+Style/MixinUsage:
+  Exclude:
+    - bin/update
+# END: Style/MixinUsage
+
+# BEGIN: Style/SymbolArray
+Style/SymbolArray:
+  Exclude:
+    - Gemfile
+# END: Style/SymbolArray

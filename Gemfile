@@ -68,3 +68,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ###################
 # END: initial gems
 ###################
+
+# BEGIN: gems for test_code.sh
+group :development, :testing do
+  gem 'rubocop', '0.61.1' # Checks for violations of the Ruby Style Guide, not recommended for legacy apps
+end
+# END: gems for test_code.sh
