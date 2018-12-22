@@ -71,6 +71,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # BEGIN: gems for test_code.sh
 group :development, :testing do
+  gem 'brakeman', '4.3.1'
+  gem 'bundler-audit', '0.6.0'
+  gem 'gemsurance', '0.9.0'
+  gem 'rails_best_practices', '1.19.4'
   gem 'rubocop', '0.61.1' # Checks for violations of the Ruby Style Guide, not recommended for legacy apps
+  gem 'sandi_meter', '1.2.0'
 end
 # END: gems for test_code.sh
