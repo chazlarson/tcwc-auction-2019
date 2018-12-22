@@ -150,3 +150,5 @@ group :test, :development do
   gem 'ruby-progressbar', '1.10.0' # Provides a progress bar to be used during long loop actions
 end
 # END: gems used in db/seeds.rb
+
+gem 'jquery-rails', '4.3.3' # Needed for dropdown menus

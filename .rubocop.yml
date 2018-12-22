@@ -61,6 +61,7 @@ Style/ClassAndModuleChildren:
 Style/MixinUsage:
   Exclude:
     - bin/update
+    - test/test_helper.rb
 # END: Style/MixinUsage
 
 # BEGIN: Style/SymbolArray
