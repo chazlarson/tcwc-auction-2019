@@ -18,3 +18,27 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+# BEGIN: Capybara setup
+require 'capybara/rails'
+require 'capybara/email'
+
+# NOTE:
+# The ActionDispatch::IntegrationTest class applies to
+# integration tests AND controller tests.
+class ActionDispatch::IntegrationTest
+  # Make the Capybara DSL available
+  include Capybara::DSL
+  include Capybara::Email::DSL
+
+  # Reset sessions and driver after each integration and controller test
+  def teardown
+    teardown_universal
+  end
+end
+# END: Capybara setup
+
+def teardown_universal
+  Capybara.reset_sessions!
+  Capybara.use_default_driver
+end
