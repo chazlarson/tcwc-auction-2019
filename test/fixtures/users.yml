@@ -1,5 +1,68 @@
 # Read about fixtures at
 # http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# These fixtures are disabled initially.
-# The original fixtures created by the Devise gem cause all tests to fail.
+connery:
+  last_name: 'Connery'
+  first_name: 'Sean'
+  username: 'sconnery'
+  email: 'sean_connery@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'Goldfinger') %>
+  confirmed_at: <%= Time.zone.now %>
+
+lazenby:
+  last_name: 'Lazenby'
+  first_name: 'George'
+  username: 'glazenby'
+  email: 'george_lazenby@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'ohmss1969') %>
+  confirmed_at: <%= Time.zone.now %>
+
+moore:
+  last_name: 'Moore'
+  first_name: 'Roger'
+  username: 'rmoore'
+  email: 'roger_moore@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'moonraker') %>
+  confirmed_at: <%= Time.zone.now %>
+
+dalton:
+  last_name: 'Dalton'
+  first_name: 'Timothy'
+  username: 'tdalton'
+  email: 'timothy_dalton@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'daylights') %>
+  confirmed_at: <%= Time.zone.now %>
+
+brosnan:
+  last_name: 'Brosnan'
+  first_name: 'Pierce'
+  username: 'pbrosnan'
+  email: 'pierce_brosnan@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'goldeneye') %>
+  confirmed_at: <%= Time.zone.now %>
+
+craig:
+  last_name: 'Craig'
+  first_name: 'Daniel'
+  username: 'dcraig'
+  email: 'daniel_craig@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'reboot007') %>
+  confirmed_at: <%= Time.zone.now %>
+
+blofeld:
+  last_name: 'Blofeld'
+  first_name: 'Ernst'
+  username: 'eblofeld'
+  email: 'ernst_blofeld@example.com'
+  encrypted_password: <%= User.new.send(:password_digest, 'stainless steel') %>
+  confirmed_at: <%= Time.zone.now %>
+
+<% 100.times do |n| %>
+user_<%= n %>:
+  last_name: <%= ['Zboncak', 'Zemlak', 'Ziemann', 'Zieme', 'Zulauf'].sample %>
+  first_name: <%= Faker::Name.first_name %>
+  username: <%= "z_user_#{n}" %>
+  email: <%= Faker::Internet.email %>
+  encrypted_password: <%= User.new.send(:password_digest, 'password1234') %>
+  confirmed_at: <%= Time.zone.now %>
+<% end %>
