@@ -76,3 +76,9 @@ Lint/AssignmentInCondition:
   Exclude:
     - app/models/user.rb
 # END: Lint/AssignmentInCondition
+
+# BEGIN: Layout/TrailingWhitespace
+Layout/TrailingWhitespace:
+  Exclude:
+    - config/routes.rb
+# END: Layout/TrailingWhitespace

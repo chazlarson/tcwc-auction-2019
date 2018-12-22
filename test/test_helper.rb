@@ -129,3 +129,11 @@ def setup_universal
 end
 # rubocop:enable Metrics/AbcSize
 # rubocop:enable Metrics/MethodLength
+
+def begin_user_password_reset(e)
+  visit root_path
+  click_on 'Login'
+  click_on 'Forgot your password?'
+  fill_in('Email', with: e)
+  click_on 'Send me reset password instructions'
+end
