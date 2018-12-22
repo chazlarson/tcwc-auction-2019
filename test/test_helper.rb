@@ -138,3 +138,19 @@ def begin_user_password_reset(e)
   fill_in('Email', with: e)
   click_on 'Send me reset password instructions'
 end
+
+# rubocop:disable Metrics/MethodLength
+def login_admin(str_login, str_pwd, status_remember)
+  visit root_path
+  click_on 'Login'
+  click_on 'Admin Login'
+  fill_in('Login', with: str_login)
+  fill_in('Password', with: str_pwd)
+  if status_remember == true
+    check('Remember me')
+  else
+    uncheck('Remember me')
+  end
+  click_button('Log in')
+end
+# rubocop:enable Metrics/MethodLength
