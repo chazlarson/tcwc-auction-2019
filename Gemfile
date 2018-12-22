@@ -152,3 +152,4 @@ end
 # END: gems used in db/seeds.rb
 
 gem 'jquery-rails', '4.3.3' # Needed for dropdown menus
+gem 'timecop', '0.9.1', group: :testing # Changes current time, needed for testing the lock duration

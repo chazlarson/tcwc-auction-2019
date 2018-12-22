@@ -6,7 +6,8 @@ Rails.application.routes.draw do
              controllers: { registrations: 'users/registrations',
                             sessions: 'users/sessions',
                             passwords: 'users/passwords',
-                            confirmations: 'users/confirmations' }
+                            confirmations: 'users/confirmations',
+                            unlocks: 'users/unlocks' }
   # END: user section
 
   # BEGIN: static pages
