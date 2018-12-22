@@ -87,4 +87,37 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
   # END: show-super_admin
   # END: SHOW
+
+  # BEGIN: INDEX
+  # BEGIN: index public
+  test 'should redirect index page when not logged in' do
+    get users_path
+    assert_redirected_to root_path
+  end
+  # END: index public
+
+  # BEGIN: index user
+  test 'should redirect index page when logged in as a user' do
+    sign_in @u1, scope: :user
+    get users_path
+    assert_redirected_to root_path
+  end
+  # END: index user
+
+  # BEGIN: index regular admin
+  test 'should not redirect index page when logged in as a regular admin' do
+    sign_in @a4, scope: :admin
+    get users_path
+    assert_response :success
+  end
+  # END: index regular admin
+
+  # BEGIN: index super admin
+  test 'should not redirect index page when logged in as a super admin' do
+    sign_in @a1, scope: :admin
+    get users_path
+    assert_response :success
+  end
+  # END: index super admin
+  # END: INDEX
 end
