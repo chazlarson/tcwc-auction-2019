@@ -70,6 +70,7 @@ Style/SymbolArray:
   Exclude:
     - Gemfile
     - app/controllers/users/registrations_controller.rb
+    - app/controllers/admins/registrations_controller.rb
 # END: Style/SymbolArray
 
 # BEGIN: Lint/AssignmentInCondition

@@ -154,3 +154,9 @@ def login_admin(str_login, str_pwd, status_remember)
   click_button('Log in')
 end
 # rubocop:enable Metrics/MethodLength
+
+def edit_admin_start(admin1)
+  login_as(admin1, scope: :admin)
+  visit root_path
+  click_on 'Edit Settings'
+end
