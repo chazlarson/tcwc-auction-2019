@@ -95,3 +95,7 @@ group :development, :testing do
   gem 'sandi_meter', '1.2.0'
 end
 # END: gems for test_code.sh
+
+# Minitest
+gem 'minitest', '5.11.3', require: false, group: :testing
+gem 'minitest-reporters', '1.3.5', require: false, group: :testing # Adds special features to tests
