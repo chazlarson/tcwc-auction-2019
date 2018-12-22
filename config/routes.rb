@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   # BEGIN: user section
   devise_for :users,
-             controllers: { registrations: 'users/registrations' }
+             controllers: { registrations: 'users/registrations',
+                            sessions: 'users/sessions' }
   # END: user section
 
   # BEGIN: static pages

@@ -47,6 +47,7 @@ Metrics/LineLength:
     - test/test_helper.rb
     - test/helpers/application_helper_test.rb
     - config/initializers/devise.rb
+    - app/models/user.rb
 # END: Metrics/LineLength
 
 # BEGIN: Style/ClassAndModuleChildren
@@ -68,3 +69,9 @@ Style/SymbolArray:
     - Gemfile
     - app/controllers/users/registrations_controller.rb
 # END: Style/SymbolArray
+
+# BEGIN: Lint/AssignmentInCondition
+Lint/AssignmentInCondition:
+  Exclude:
+    - app/models/user.rb
+# END: Lint/AssignmentInCondition
