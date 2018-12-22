@@ -106,3 +106,7 @@ group :test do
   gem 'capybara-slow_finder_errors', '0.1.5'
 end
 # END: Capybara enhancements
+
+# BEGIN: test coverage
+gem 'simplecov', '0.16.1', require: false, group: :test
+# END: test coverage

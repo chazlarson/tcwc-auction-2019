@@ -125,3 +125,6 @@ mod_app.sh
 # NOTE: Comments MUST get their own dedicated lines and cannot be shared with that of the file name.
 
 test/html_reports/
+
+# Keep SimpleCov test results out of the source code
+coverage
