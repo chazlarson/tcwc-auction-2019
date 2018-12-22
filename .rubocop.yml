@@ -45,6 +45,7 @@ Metrics/LineLength:
     - Rakefile
     - test/integration/*
     - test/test_helper.rb
+    - test/helpers/application_helper_test.rb
 # END: Metrics/LineLength
 
 # BEGIN: Style/ClassAndModuleChildren
