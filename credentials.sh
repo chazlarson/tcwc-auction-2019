@@ -51,3 +51,11 @@ if [ -z "$GIT_NAME" ]; then
   git config --global user.name "$NAME"
   echo
 fi
+
+echo '------------'
+echo 'heroku login'
+heroku login
+
+echo '---------------'
+echo 'heroku keys:add'
+heroku keys:add
