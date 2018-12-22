@@ -110,3 +110,12 @@ end
 # BEGIN: test coverage
 gem 'simplecov', '0.16.1', require: false, group: :test
 # END: test coverage
+
+# BEGIN: gems used for setting up PostgreSQL in the development environment
+# You do not need these gems if you use SQLite in the development environment.
+# NOTE: Attempts to use "gem install" in the PostgreSQL setup scripts did not pan out.
+gem 'figaro', '1.1.1'
+gem 'line_containing', '0.1.2'
+gem 'remove_double_blank', '0.0.0'
+gem 'string_in_file', '1.0.2'
+# END: gems used for setting up PostgreSQL in the development environment
