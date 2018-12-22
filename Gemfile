@@ -137,3 +137,5 @@ end
 # END: Better Errors
 
 gem 'pry-rails', '0.3.8' # Improves the screen output in the Rails console
+
+gem 'email_munger', '0.0.0' # Encodes email address to prevent harvesting by bots

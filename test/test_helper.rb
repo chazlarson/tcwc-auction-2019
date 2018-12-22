@@ -38,6 +38,9 @@ require 'capybara/email'
 # The ActionDispatch::IntegrationTest class applies to
 # integration tests AND controller tests.
 class ActionDispatch::IntegrationTest
+  # Make app/helpers/application_helper.rb available
+  include ApplicationHelper
+
   # Make the Capybara DSL available
   include Capybara::DSL
   include Capybara::Email::DSL

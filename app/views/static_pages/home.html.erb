@@ -1,2 +1,8 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, '') %>
+
+<h1>Home</h1>
+Welcome to Generic App Template!
+<br><br>
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>
+
