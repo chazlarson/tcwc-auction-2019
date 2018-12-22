@@ -141,3 +141,5 @@ gem 'pry-rails', '0.3.8' # Improves the screen output in the Rails console
 gem 'email_munger', '0.0.0' # Encodes email address to prevent harvesting by bots
 
 gem 'bootstrap-sass', '3.4.0' # Bootstrap styling
+
+gem 'devise', '4.5.0' # Provides admin/user authentication
