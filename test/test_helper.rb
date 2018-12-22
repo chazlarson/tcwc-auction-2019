@@ -47,6 +47,9 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
   include Capybara::Email::DSL
 
+  # Needed to allow sign_in to work in controller tests
+  include Devise::Test::IntegrationHelpers
+
   # Execute before each integration and controller test
   def setup
     setup_universal
