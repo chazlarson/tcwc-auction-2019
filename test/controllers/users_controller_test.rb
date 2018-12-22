@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ClassLength
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
@@ -120,4 +121,57 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
   # END: index super admin
   # END: INDEX
+
+  # BEGIN: DELETE
+  # BEGIN: delete-public
+  test 'should not allow visitor to delete user' do
+    assert_no_difference 'User.count' do
+      delete user_path(@u7)
+      assert_redirected_to root_path
+    end
+  end
+  # END: delete-public
+
+  # BEGIN: delete-other_user
+  test 'should not allow user to delete another user' do
+    assert_no_difference 'User.count' do
+      sign_in @u1, scope: :user
+      delete user_path(@u7)
+      assert_redirected_to root_path
+    end
+  end
+  # END: delete-other_user
+
+  # BEGIN: delete-self
+  # NOTE: User can delete self through edit registration form.
+  test 'should not allow user to delete self' do
+    assert_no_difference 'User.count' do
+      sign_in @u7, scope: :user
+      delete user_path(@u7)
+      assert_redirected_to root_path
+    end
+  end
+  # END: delete-self
+
+  # BEGIN: delete-regular_admin
+  test 'should allow regular admin to delete user' do
+    assert_difference 'User.count', -1 do
+      sign_in @a4, scope: :admin
+      delete user_path(@u7)
+      assert_redirected_to users_path
+    end
+  end
+  # END: delete-regular_admin
+
+  # BEGIN: delete-super_admin
+  test 'should allow super admin to delete user' do
+    assert_difference 'User.count', -1 do
+      sign_in @a1, scope: :admin
+      delete user_path(@u7)
+      assert_redirected_to users_path
+    end
+  end
+  # END: delete-super_admin
+  # END: DELETE
 end
+# rubocop:enable Metrics/ClassLength
